@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+
+body {
+	@apply overflow-y-hidden select-none;
+}
+
+.btn {
+	@apply h-11 rounded-br-md rounded-tl-md border border-white bg-black/60 px-3 py-2 font-bold tracking-wider text-white;
+	@apply hover:enabled:-mb-[3px] hover:enabled:scale-110 hover:enabled:border-b-4 hover:enabled:border-black hover:enabled:bg-white hover:enabled:text-black;
+	@apply focus:enabled:-mb-[3px] focus:enabled:border-b-4 focus:enabled:border-black focus:enabled:bg-white focus:enabled:text-black focus:enabled:outline-none;
+	@apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.input {
+	@apply h-11 rounded-br-md rounded-tl-md border border-white bg-black/60 px-3 py-2 font-medium text-white;
+	@apply hover:enabled:border-b-4 hover:enabled:border-black hover:enabled:bg-white hover:enabled:text-black;
+	@apply focus:ring-0 focus:enabled:border-b-4 focus:enabled:border-black focus:enabled:bg-white focus:enabled:text-black focus:enabled:outline-none;
+	@apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+/* BEGIN svelte-fa styles don't seem to apply properly, so we'll just use classes I guess */
+.icon {
+	@apply origin-center overflow-visible h-[1em] align-[-0.125em];
+}
+
+.icon.icon-xs {
+	@apply text-[0.75em];
+}
+
+.icon.icon-sm {
+	@apply text-[0.875em];
+}
+
+.icon.icon-lg {
+	@apply text-[1.33333em] leading-[0.75em] align-[-0.225em];
+}
+/* END */
+
+.animate-scale {
+	animation: scale 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-wiggle {
+	animation: wiggle 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@tailwind utilities;
+
+@keyframes scale {
+	50% {
+		scale: 105%;
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+	20% {
+		transform: rotate(2deg);
+	}
+	40% {
+		transform: rotate(-4deg);
+	}
+	60% {
+		transform: rotate(0deg);
+	}
+	80% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
